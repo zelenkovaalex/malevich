@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Malevich vibes</title>
+    <link rel="icon" type="img/png" href="img/sq.png" />
+    <style media="screen">
+      .big_boy {
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        position: relative;
+        width: 80vw;
+        height: 80vw;
+        border: 10px solid #000000;
+        background-color: rgba(172, 172, 172, 1);
+      }
+      .big_boy:hover {
+        background-color: rgba(246, 165, 11, 1);
+      }
+      .white_sq1 {
+        position: absolute;
+        z-index: 0;
+        margin-top: -51vw;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        position: relative;
+        width: 50vw;
+        height: 20vw;
+        background-color: rgba(255, 255, 255, 1);
+      }
+      .white_sq2 {
+        position: absolute;
+        z-index: 0;
+        margin-top: -35vw;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        position: relative;
+        width: 20vw;
+        height: 50vw;
+        background-color: rgba(255, 255, 255, 1);
+      }
+      .black_sq1 {
+        position: absolute;
+        z-index: 1;
+        margin-top: -59vw;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        position: relative;
+        width: 8vw;
+        height: 70vw;
+        background-color: rgba(0, 0, 0, 1);
+      }
+      .black_sq2 {
+        position: absolute;
+        z-index: 1;
+        margin-top: -40vw;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        position: relative;
+        width: 70vw;
+        height: 8vw;
+        background-color: rgba(0, 0, 0, 1);
+      }
+      .red_sq {
+        position: absolute;
+        z-index: 2;
+        margin-top: -24vw;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        position: relative;
+        width: 40vw;
+        height: 40vw;
+        background-color: rgba(229, 69, 54, 1);
+      }
+      .opa {
+        opacity: 70%;
+      }
+      .opa1 {
+        opacity: 50%;
+      }
+      .opa2 {
+        opacity: 20%;
+      }
+      .opa3 {
+        display: none;
+      }
+      .color_1 {
+        background-color: rgba(172, 172, 172, 1);
+      }
+      .color_2 {
+        background: rgba(246, 165, 11, 1);
+      }
+      .color_3 {
+        background: rgba(0, 133, 55, 1);
+      }
+      .color_4 {
+        background: rgba(2, 129, 162, 1);
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $(".red_sq").draggable(function () {
+      });
+      let count1 = 0;
+    	$(".black_sq1, .black_sq2").click(function() {
+    		count1 +=1;
+    		if (count1 == 1 ) {
+    			$(".black_sq1, .black_sq2").addClass("opa");
+    		}
+    		else if (count1 == 2) {
+    			$(".black_sq1, .black_sq2").addClass("opa1");
+    		}
+    			else if (count1 == 3) {
+    				$(".black_sq1, .black_sq2").addClass("opa2");
+    			}
+    				else {
+    						$(".black_sq1, .black_sq2").addClass("opa3");
+    				}
+    	});
+      let rotate = 0;
+      // $('.big_boy').click(function () {
+      //   if ($('.big_boy').hasClass('color_1')) {
+      //     $(this).toggleClass("color_2")
+      //   }
+      //   if ($('.big_boy').hasClass('color_2')) {
+      //      $(this).toggleClass("color_3")
+      //    }
+      //   if ($('.big_boy').hasClass('color_3')) {
+      //      $(this).toggleClass("color_4")
+      //   }
+      //   if ($('.big_boy').hasClass('color_4')) {
+      //     $(this).removeClass('color_2')
+      //     $(this).removeClass('color_3')
+      //     $(this).removeClass('color_4')
+      //   }
+      // });
+      $(".white_sq1").click(function () {
+        rotate += 30;
+         $(this).css('transform', `rotate(${rotate}deg)`);
+      });
+      $(".white_sq2").click(function () {
+        rotate += 30;
+         $(this).css('transform', `rotate(${rotate}deg)`);
+      });
+    });
+    </script>
+  </head>
+  <body>
+  <div class="big_boy color_1"></div>
+  <div class="white_sq1"></div>
+  <div class="white_sq2"></div>
+  <div class="black_sq1"></div>
+  <div class="black_sq2"></div>
+  <div class="red_sq"></div>
+  </body>
+</html>
